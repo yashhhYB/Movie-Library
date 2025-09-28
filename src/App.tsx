@@ -9,7 +9,7 @@ import Search from "./pages/Search";
 import Watchlist from "./pages/Watchlist";
 import Favorites from "./pages/Favorites";
 import MovieDetails from "./pages/MovieDetails";
-import MoodRecommendations from "./pages/MoodRecommendations";
+
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -26,7 +26,7 @@ const App = () => (
             <Route path="/search" element={<Search />} />
             <Route path="/watchlist" element={<Watchlist />} />
             <Route path="/favorites" element={<Favorites />} />
-            <Route path="/mood" element={<MoodRecommendations />} />
+
             <Route path="/movie/:id" element={<MovieDetails />} />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />

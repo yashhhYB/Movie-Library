@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
-import { Search, Film, Heart, Bookmark, Home, Sparkles } from 'lucide-react';
+import { Search, Film, Heart, Bookmark, Home } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { useMovieContext } from '@/contexts/MovieContext';
@@ -60,16 +60,7 @@ export function Header() {
               </Link>
             </Button>
 
-            <Button
-              variant={isActive('/mood') ? 'default' : 'ghost'}
-              size="sm"
-              asChild
-            >
-              <Link to="/mood">
-                <Sparkles className="w-4 h-4 mr-2" />
-                Mood
-              </Link>
-            </Button>
+
 
             <Button
               variant={isActive('/watchlist') ? 'default' : 'ghost'}
