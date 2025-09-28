@@ -1,0 +1,133 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system - Cinematic Movie App Theme
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    /* Cinematic Background Colors */
+    --background: 220 25% 8%;
+    --foreground: 210 20% 95%;
+
+    /* Movie Card Colors */
+    --card: 220 25% 12%;
+    --card-foreground: 210 20% 95%;
+    --card-hover: 220 25% 15%;
+
+    /* Popover Colors */
+    --popover: 220 25% 10%;
+    --popover-foreground: 210 20% 95%;
+
+    /* Primary - Golden Cinema */
+    --primary: 45 100% 65%;
+    --primary-foreground: 220 25% 8%;
+    --primary-glow: 45 100% 70%;
+
+    /* Secondary - Deep Blue */
+    --secondary: 220 25% 15%;
+    --secondary-foreground: 210 20% 95%;
+
+    /* Muted Colors */
+    --muted: 220 15% 20%;
+    --muted-foreground: 215 15% 70%;
+
+    /* Accent - Cinema Purple */
+    --accent: 270 60% 50%;
+    --accent-foreground: 210 20% 95%;
+
+    /* Destructive Colors */
+    --destructive: 0 85% 60%;
+    --destructive-foreground: 210 20% 95%;
+
+    /* Border and Input */
+    --border: 220 15% 25%;
+    --input: 220 15% 15%;
+    --ring: 45 100% 65%;
+
+    --radius: 0.75rem;
+
+    /* Cinematic Gradients */
+    --gradient-cinema: linear-gradient(135deg, hsl(220 25% 8%), hsl(270 60% 12%));
+    --gradient-card: linear-gradient(145deg, hsl(220 25% 12%), hsl(220 25% 8%));
+    --gradient-hero: linear-gradient(180deg, hsl(220 25% 8%) 0%, hsl(270 60% 8%) 100%);
+    --gradient-poster: linear-gradient(0deg, hsl(220 25% 8% / 0.8), transparent 60%);
+
+    /* Cinema Shadows and Effects */
+    --shadow-poster: 0 8px 32px hsl(220 25% 4% / 0.6);
+    --shadow-card: 0 4px 20px hsl(220 25% 4% / 0.4);
+    --shadow-glow: 0 0 20px hsl(45 100% 65% / 0.3);
+
+    /* Animations */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-bounce: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+
+    /* Sidebar Colors */
+    --sidebar-background: 220 25% 10%;
+    --sidebar-foreground: 210 20% 90%;
+    --sidebar-primary: 45 100% 65%;
+    --sidebar-primary-foreground: 220 25% 8%;
+    --sidebar-accent: 220 25% 15%;
+    --sidebar-accent-foreground: 210 20% 95%;
+    --sidebar-border: 220 15% 25%;
+    --sidebar-ring: 45 100% 65%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    background: hsl(var(--background));
+    background-image: var(--gradient-cinema);
+    background-attachment: fixed;
+    min-height: 100vh;
+  }
+
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: hsl(var(--background));
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: hsl(var(--primary));
+    border-radius: 4px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: hsl(var(--primary-glow));
+  }
+}
+
+@layer components {
+  /* Movie Poster Animation */
+  .poster-hover {
+    transition: var(--transition-smooth);
+  }
+
+  .poster-hover:hover {
+    transform: scale(1.05) translateY(-4px);
+    box-shadow: var(--shadow-glow);
+  }
+
+  /* Glass Effect */
+  .glass-effect {
+    backdrop-filter: blur(10px);
+    background: hsl(var(--card) / 0.8);
+    border: 1px solid hsl(var(--border) / 0.3);
+  }
+
+  /* Cinema Text Glow */
+  .text-glow {
+    text-shadow: 0 0 10px hsl(var(--primary) / 0.5);
+  }
+}
