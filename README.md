@@ -2,22 +2,13 @@
 
 ## Overview
 
-Cinema is a modern, responsive web application designed for movie enthusiasts to browse, search, discover, and manage their favorite films. Built from scratch using React and TypeScript, this project provides an intuitive interface for exploring movies powered by the TMDB (The Movie Database) API. Users can get personalized mood-based recommendations, add movies to watchlists and favorites, view detailed movie information, and more. The app integrates with Supabase for backend services like user authentication and data persistence.
 
-This project was developed manually using standard web development practices, focusing on clean code, performance, and user experience. It leverages modern frontend tools and libraries to create a fast, scalable single-page application (SPA).
 
-## Features
-
-- **Movie Discovery**: Browse popular, top-rated, and now-playing movies with rich previews and posters.
-- **Search Functionality**: Real-time search for movies by title, with debounced input for optimal performance.
-- **Mood-Based Recommendations**: Select your mood (e.g., happy, sad, action-packed) to get tailored movie suggestions.
-- **Movie Details**: In-depth views of movie information, including cast, crew, reviews, and trailers.
-- **Watchlist & Favorites**: Add/remove movies to personal lists, with badge counters in the navigation.
-- **User Authentication**: Login/signup via Supabase for saving watchlists and favorites across sessions.
-- **Responsive Design**: Fully mobile-friendly layout using Tailwind CSS and Shadcn/UI components.
-- **Dark/Light Mode**: Theme switching support (via next-themes).
-- **Offline Support**: Basic caching with TanStack Query for improved loading times.
-- **Error Handling**: Graceful handling of API errors, loading states, and empty results.
+Cinema is a simple movie discovery app made with **React + TypeScript**. It pulls movie data from **TMDB API** and lets you:  
+- Browse trending, top-rated, or now-playing movies.  
+- Search for films in real-time.  
+- Save favorites and watchlist (Synced with **Supabase**).  
+- View details like cast, trailers, reviews.  
 
 ## Technologies Used
 
@@ -47,18 +38,6 @@ This project was developed manually using standard web development practices, fo
   - API Key: Stored in `.env` as `VITE_TMDB_API_KEY` (user must provide their own key).
 - **Date-fns**: For date formatting in movie release dates.
 
-### Utilities & Libraries
-- **clsx & Tailwind Merge**: Conditional class names.
-- **Sonner**: Toast notifications for user feedback (e.g., "Added to watchlist").
-- **Recharts**: For potential chart visualizations (e.g., movie ratings trends, though not heavily used).
-- **Embla Carousel**: For movie carousels on the home page.
-- **React Day Picker**: Calendar component for date-based filters (if extended).
-- **Zod**: Schema validation for API responses and forms.
-
-### Development Tools
-- **ESLint & TypeScript ESLint**: Code linting and formatting.
-- **PostCSS & Autoprefixer**: CSS processing.
-- **Vite Plugins**: `@vitejs/plugin-react-swc` for fast React compilation.
 
 ## Project Structure
 
@@ -95,7 +74,6 @@ moodlight-movies-main/
 │   ├── pages/               # Route components
 │   │   ├── Home.tsx         # Featured movies, popular lists
 │   │   ├── Search.tsx       # Search results page
-│   │   ├── MoodRecommendations.tsx # Mood selector and results
 │   │   ├── MovieDetails.tsx # Single movie view
 │   │   ├── Watchlist.tsx    # User's watchlist
 │   │   ├── Favorites.tsx    # User's favorites
@@ -189,8 +167,6 @@ This app was built step-by-step as a full-stack frontend project:
 6. **Components**: Built reusable components like MovieCard (with hover effects), Header (with search), and pages.
 7. **Integrations**: Set up Supabase client for auth and DB; TMDB service for movie data.
 8. **Enhancements**: Added debouncing for search, toasts for feedback, responsive breakpoints, and theme support.
-9. **Testing & Optimization**: Used Vite's dev tools for performance; linted code; ensured accessibility (ARIA labels in UI components).
-10. **Deployment Prep**: Configured meta tags, favicon, and production build optimizations.
 
 The focus was on modularity – each page/service is self-contained, with TypeScript ensuring type-safe API responses.
 
@@ -208,10 +184,4 @@ Please ensure code follows ESLint rules and includes tests if adding features.
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-## Contact
 
-Built by [Your Name] – feel free to reach out for questions or collaborations!
-
----
-
-*Last updated: [Current Date]*
